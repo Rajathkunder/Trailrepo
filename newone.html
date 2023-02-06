@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dashboard</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css">
+@media (max-width: 600px)
+{
+	body{
+		background-color: lightblue;
+	}
+}
+	.hed{
+		height: 50px;
+	}
+
+	.bdy{
+		align-items: right;
+		text-align: center;
+		margin-left: 0%;
+		width: auto;
+		height: 60%;
+		background-color:lightblue;
+		border-radius: 20px;
+		padding-top: 5px;
+		 max-height: 50%;
+    overflow-y: scroll;
+
+    direction: rtl;
+    
+ 
+
+	}
+
+
+
+.txt{
+	width: 130%;
+	height: 26px;
+	border-radius: 10px;
+	margin-top: 25px;
+
+}
+.ar{
+	height: 60px;
+}
+.btn{
+	background-color: blue;
+	border-radius: 10px;
+	cursor: pointer;
+	height: 40px;
+	width: 90px;
+	color: lightblue;
+	margin-top: 10px;
+	margin-left: 130px;
+}
+.contact-form{
+	
+	direction:ltr;
+	width: 80%;
+
+}
+.jj{
+	margin-left: 60%;
+}
+</style>
+<body>
+<header style="background-color: orange">
+	<div class="hed">
+		<img src="logo.jpg" height="60px" width="90px;" alt="LOGO">
+		
+	</div><hr>
+	</header>
+	<section>
+		<div class="bdy">
+			<div class="jj">
+			<form class="contact-form">
+				<table style="padding-top: 4px; border-spacing: 4px;">
+					<tr><th>
+				<label class="ee">First name</label></th><td><input type="text" class="txt" name="fname" placeholder="enter name" required=""><br></td></tr>
+				<tr><th><label class="ee">Email</label></th><td><input type="email" name="mail" class="txt" placeholder="enter name" required=""><br></td></tr>
+				<tr><th><label class="ee">Phone</label></th><td><input type="text" name="phone" class="txt" placeholder="enter name" maxlength="10" pattern="[6789][0-9]{9}[a-zA-Z]" title="Please enter valid phone number"><br></td></tr>
+				<tr><th><label class="ee">Description</label></th><td><textarea name="desc" class="txt ar" placeholder="enterdescription"></textarea><br></td></tr>
+				<tr><td>        </td>	<td colspan="2"><input type="submit" class="btn" name="submit" value="Submit"></td></tr>
+</table>
+
+
+			</form>
+			</div>
+
+		</div>
+
+	</section><hr>
+
+<script type="text/javascript">
+  const form = document.querySelector(".contact-form");
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = form.elements.fname.value;
+     const email = form.elements.mail.value;
+    const phone = form.elements.phone.value;
+    const message = form.elements.desc.value;
+    alert(`Thank you ${name} ${email} ${phone} ${message}` );
+    form.reset()
+});
+</script>
+</body>
+
+</html>
