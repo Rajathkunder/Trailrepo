@@ -1,9 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script type="text/javascript">
+			let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+	</script>
 	<title>dashboard</title>
 	<meta charset="utf-8">
-	<script type="text/javascript" src="sss.js"></script>
+	
 </head>
 <style type="text/css">
 	* {box-sizing: border-box}
@@ -12,6 +41,7 @@ body {font-family: Verdana, sans-serif; margin:0}
 img {vertical-align: middle;}
 
 /* Slideshow container */
+@media (max-width: 600px)
 .slideshow-container {
   max-width: 1000px;
   position: relative;
@@ -155,6 +185,7 @@ img {vertical-align: middle;}
 	
 	direction:ltr;
 	width: 80%;
+	height: 80%;
 
 }
 .slideshow-container{position: absolute;
@@ -223,9 +254,9 @@ width: 100%;
 				<table style="padding-top: 2px; border-spacing: 2px; align-items: center;">
 					<tr><th>
 				<label class="ee"> Enter First name</label></th><td ><input type="text" class="txt" name="fname" placeholder="enter name" required=""><br></td></tr>
-				<tr><th><label class="ee">Email Address</label></th><td><input type="email" name="mail" class="txt" placeholder="enter email" required=""><br></td></tr>
-				<tr><th><label class="ee">Phone Number</label></th><td><input type="text" name="phone" class="txt" placeholder="enter phone no" maxlength="10" pattern="[6789][0-9]{9}" title="Please enter valid phone number"><br></td></tr>
-				<tr><th><label class="ee">Description</label></th><td><textarea name="desc" class="txt ar" placeholder="enterdescription"></textarea><br></td></tr>
+				<tr><th><label class="ee">Enter Email Address</label></th><td><input type="email" name="mail" class="txt" placeholder="enter email" required=""><br></td></tr>
+				<tr><th><label class="ee">Enter Phone Number</label></th><td><input type="text" name="phone" class="txt" placeholder="enter phone no" maxlength="10" pattern="[6789][0-9]{9}" title="Please enter valid phone number"><br></td></tr>
+				<tr><th><label class="ee"> Enter Description</label></th><td><textarea name="desc" class="txt ar" placeholder="enterdescription"></textarea><br></td></tr>
 				<tr><td>        </td>	<td colspan="2"><input type="submit" class="btn" name="submit" value="Submit"></td></tr>
 </table>
 
