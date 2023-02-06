@@ -3,6 +3,7 @@
 <head>
 	<title>dashboard</title>
 	<meta charset="utf-8">
+	<script type="text/javascript" src="sss.js"></script>
 </head>
 <style type="text/css">
 	* {box-sizing: border-box}
@@ -134,7 +135,7 @@ img {vertical-align: middle;}
 	width: 130%;
 	height: 26px;
 	border-radius: 10px;
-	margin-top: 25px;
+	margin-top: 8px;
 
 }
 .ar{
@@ -171,6 +172,10 @@ width: 100%;
 }
 .ee{
 	color:white;
+	font-size: 15px;
+}
+.td{
+
 }
 </style>
 <body>
@@ -215,9 +220,9 @@ width: 100%;
 
 			
 			<form class="contact-form">
-				<table style="padding-top: 4px; border-spacing: 4px; align-items: center;">
+				<table style="padding-top: 2px; border-spacing: 2px; align-items: center;">
 					<tr><th>
-				<label class="ee"> Enter First name</label></th><td><input type="text" class="txt" name="fname" placeholder="enter name" required=""><br></td></tr>
+				<label class="ee"> Enter First name</label></th><td ><input type="text" class="txt" name="fname" placeholder="enter name" required=""><br></td></tr>
 				<tr><th><label class="ee">Email Address</label></th><td><input type="email" name="mail" class="txt" placeholder="enter email" required=""><br></td></tr>
 				<tr><th><label class="ee">Phone Number</label></th><td><input type="text" name="phone" class="txt" placeholder="enter phone no" maxlength="10" pattern="[6789][0-9]{9}" title="Please enter valid phone number"><br></td></tr>
 				<tr><th><label class="ee">Description</label></th><td><textarea name="desc" class="txt ar" placeholder="enterdescription"></textarea><br></td></tr>
@@ -233,32 +238,8 @@ width: 100%;
 	</section><hr>
 
 <script type="text/javascript">
-	let slideIndex = 1;
-showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
   const form = document.querySelector(".contact-form");
 form.addEventListener("submit", function(event) {
     event.preventDefault();
